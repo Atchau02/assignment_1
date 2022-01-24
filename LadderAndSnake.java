@@ -6,6 +6,7 @@ public class LadderAndSnake {
     private int dice;
     
     private int nbPlayers;
+    private int[] playerPositons;
     
     private int[][] gameBoard;
     private int[][] snakes;
@@ -17,6 +18,11 @@ public class LadderAndSnake {
 
         //number of players
         this.nbPlayers = nbOfPlayers;
+
+        //setting up playerPosition array
+        playerPositons = new int[nbPlayers];
+        for(int i = 0; i < nbPlayers; i++)
+            playerPositons[i] = 0;
 
         //setting up the board
         gameBoard = new int[10][10];
@@ -89,7 +95,7 @@ public class LadderAndSnake {
         1. use constructor for board
         2. create players
         3. roll to chose order
-        4. play
+        4. play the game
         */
     }
 
