@@ -92,8 +92,6 @@ public class LadderAndSnake {
     //initiate the game 
     public void play() {
         /*
-        1. use constructor for board
-        2. create players
         3. roll to chose order
         4. play the game
         */
