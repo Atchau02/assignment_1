@@ -3,13 +3,38 @@ package assignment_249.assignment_1;
 public class Player {
 
     String name;
-    int turnOrder;
+    int position;
+    int startingRoll;
 
     public Player(String name){
         this.name = name;
+        this.position = 0;
     }
 
-    public void setTurnOrder(int turnOrder) {
-        this.turnOrder = turnOrder;
+
+    //getters and setter
+    public String getName() {
+        return name;
     }
+
+    public int getStartingRoll() {
+        return startingRoll;
+    }
+
+    public void setStartingRoll(int startingRoll) {
+        this.startingRoll = startingRoll;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
 }
+
+
+
+   

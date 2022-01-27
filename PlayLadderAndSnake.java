@@ -39,7 +39,11 @@ public class PlayLadderAndSnake {
             valid = nbPlayers >= 2 && nbPlayers <= 4;
         }
 
-        
+        //creating the board
+        LadderAndSnake board = new LadderAndSnake(nbPlayers);
+
+        //initializing game
+        board.play();
 
 
         /*
