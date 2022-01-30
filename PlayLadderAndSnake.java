@@ -139,6 +139,7 @@ public class PlayLadderAndSnake {
             System.out.println(i.getName());
         } 
         
+
         //initializing game
         board.play();
 

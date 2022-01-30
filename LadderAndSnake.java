@@ -89,6 +89,20 @@ public class LadderAndSnake {
     //initiate the game 
     public void play() {
         
+        //printing the board
+        System.out.println("This is your gameboard");
+        for(int row = gameBoard.length-1; row >= 0; row--)
+        {
+            for(int col = 0; col < gameBoard[row].length; col++)
+            {
+                System.out.print("\t" + gameBoard[row][col]);
+            }
+            System.out.println();
+        }
+
+        System.out.println("\nThe snakes are located at: (16 -> 6), (48 -> 30), (62 -> 19), (64 -> 60), (93 -> 68), (95 -> 24), (97 -> 76), (98 -> 78).");
+        System.out.println("The ladders are located at: (1 -> 38), (4 -> 14), (9 -> 31), (21 -> 42), (28 -> 84), (36 -> 44), (51 -> 67), (71 -> 91), (80 -> 100).");
+
         System.out.println("\n\nLet the game begin!\n\n");
         
     }
@@ -154,5 +168,7 @@ public class LadderAndSnake {
         }
     }
      
+
+    
 
 }
