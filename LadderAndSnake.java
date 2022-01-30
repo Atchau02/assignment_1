@@ -8,7 +8,7 @@ public class LadderAndSnake {
     private int dice;
     
     private int nbPlayers;
-    private ArrayList<Player> players;
+    ArrayList<Player> players;
     
     private int[][] gameBoard;
     private int[][] snakes;
@@ -187,6 +187,7 @@ public class LadderAndSnake {
                 }
             }
 
+        /* printing array lists
         for (Integer i : order) {
             System.out.println(i);
         } 
@@ -196,8 +197,58 @@ public class LadderAndSnake {
         for (Player i : players) {
             System.out.println(i.getName());
         } 
+        */
     }
 
+    public boolean movePlayer(Player player){
+        
+        //calculate new position
+        int newPosition = player.getPosition() + flipDice();
+
+        //if new position is 100 (won)
+        if(newPosition == 100)
+        {
+            player.setPosition(100);
+            return true;
+        }
+
+        else
+        {
+            if(newPosition > 100)
+            {   //player goes over 100
+                newPosition = 100 - (newPosition-100);
+                player.setPosition(newPosition);
+                return false;
+            }
+
+            //check if positionis head of snake
+            for(int i = 0; i < 8; i++)
+            {
+                if (snakes[i][0] == newPosition) {
+                    newPosition = snakes[i][1];
+                    player.setPosition(newPosition);
+                    System.out.println(player.getName() +" takes snake from +"+ snakes[i][0] + " to " + snakes[i][1] );
+                    return false;
+                }
+            }
+                
+            //check if position is bottom of ladder
+            for(int i = 0; i < 9; i++)
+            {
+                if (ladders[i][0] == newPosition) {
+                    newPosition = ladders[i][1];
+                    player.setPosition(newPosition);
+                    System.out.println(player.getName() +" takes ladder from +"+ ladders[i][0] + " to " + ladders[i][1] );
+                    return false;
+                }
+            }
+            
+            //regular move
+            player.setPosition(newPosition);
+            return false;
+            
+        }
+    }
      
 
 }

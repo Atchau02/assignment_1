@@ -1,5 +1,6 @@
 package assignment_249.assignment_1;
 import java.util.Scanner;
+import java.util.ArrayList;
 /*
  Assignment 1
  Written by: Anh Tu Chau 40207791
@@ -55,6 +56,10 @@ public class PlayLadderAndSnake {
             6. set up for next player and ask for next round
             7. repeat 1 to 6 until winner
         */
+
+        // player take turn until someone wins
+        
+
 
 
         //Closing message
