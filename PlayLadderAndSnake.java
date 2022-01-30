@@ -157,9 +157,10 @@ public class PlayLadderAndSnake {
 
             //setting up for next
             playerIndex++;
-            if(playerIndex == nbPlayers)
+            if(playerIndex == nbPlayers && !done)
             {
                 playerIndex = 0;
+                board.printBoard(players);
                 System.out.println("------------------------------------------");
             }
                 

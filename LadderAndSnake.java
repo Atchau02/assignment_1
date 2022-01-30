@@ -1,5 +1,6 @@
 package assignment_249.assignment_1;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class LadderAndSnake {
 
@@ -90,7 +91,7 @@ public class LadderAndSnake {
     public void play() {
         
         //printing the board
-        System.out.println("This is your gameboard");
+        System.out.println("\nThis is your gameboard");
         for(int row = gameBoard.length-1; row >= 0; row--)
         {
             for(int col = 0; col < gameBoard[row].length; col++)
@@ -150,15 +151,16 @@ public class LadderAndSnake {
                     newPosition = ladders[i][1];
                     player.setPosition(newPosition);
                     System.out.println(player.getName() +" takes ladder from "+ ladders[i][0] + " to " + ladders[i][1] );
+
+                    if(newPosition == 100) // took ladder to 100
+                    {
+                        return true;
+                    }
+
                     return false;
                 }
             }
 
-            if(newPosition == 100)
-            {
-                player.setPosition(100);
-                return true;
-            }
             
             //regular move
             player.setPosition(newPosition);
@@ -167,8 +169,35 @@ public class LadderAndSnake {
             
         }
     }
-     
-
     
+    public void printBoard(ArrayList<Player> list){
+
+        System.out.println();
+
+        for(int row = gameBoard.length-1; row >= 0; row--)
+        {
+            for(int col = 0; col < gameBoard[row].length; col++)
+            {
+                boolean on = false;
+
+                for(int i = 0; i < list.size(); i++)
+                {
+                    if(gameBoard[row][col] == list.get(i).getPosition())
+                    {
+                        System.out.print("\t"+ list.get(i).getName() );
+                        on = true;
+                    }
+
+                }
+
+                if(!on){
+                    System.out.print("\t"+ gameBoard[row][col]);
+                }
+
+            }
+            System.out.println();
+        }
+
+    }
 
 }
