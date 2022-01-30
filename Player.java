@@ -33,6 +33,10 @@ public class Player {
         this.position = position;
     }
 
+    public String toString(){
+        return this.name + " is at " + this.position;
+    }
+
 }
 
 
