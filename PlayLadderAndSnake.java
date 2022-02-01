@@ -2,11 +2,19 @@ package assignment_249.assignment_1;
 import java.util.Scanner;
 import java.util.ArrayList;
 /*
- Assignment 1
  Written by: Anh Tu Chau 40207791
+ COMP249
+ Assignment 1
+ Due date: February 4 2022
  ***********************************
- general explanation to add later
+ This program simulates the game Ladder and Snake.
  */
+
+
+ /**
+  * @author Anh Tu Chau
+  * @version 1
+  */
 public class PlayLadderAndSnake {
     public static void main(String[] args) {
 
@@ -143,7 +151,7 @@ public class PlayLadderAndSnake {
         //initializing game
         board.play();
 
-        // playing the game
+        // playing the game until someone wins
         boolean done = false;
         int playerIndex = 0;
 
@@ -155,7 +163,7 @@ public class PlayLadderAndSnake {
             }
 
 
-            //setting up for next
+            //setting up for next player
             playerIndex++;
             if(playerIndex == nbPlayers && !done)
             {

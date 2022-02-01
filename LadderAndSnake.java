@@ -2,11 +2,19 @@ package assignment_249.assignment_1;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+/*
+ Written by: Anh Tu Chau 40207791
+ COMP249
+ Assignment 1
+ Due date: February 4 2022
+*/
+
+/**
+ * @author Anh Tu Chau
+ * @version 1
+ */
 public class LadderAndSnake {
 
-
-    
-    
     private int nbPlayers;
     private int dice;
     
@@ -16,7 +24,10 @@ public class LadderAndSnake {
 
     Scanner keyboard = new Scanner(System.in);
 
-    //constructor
+    /**
+     * Creates the board that is used to play the game.
+     * @param nbOfPlayers int with the numbers of players for the game
+     */
     public LadderAndSnake(int nbOfPlayers){
 
         //number of players
@@ -77,17 +88,26 @@ public class LadderAndSnake {
         ladders[8][1] = 100;
     }
     
-    //method to flip the dice
+    /**
+     * flips a 6 sided dice.
+     * @return int between 1 and 6
+     */
     public int flipDice(){
         return dice = ((int)(Math.random()*6+1));
     }
 
+    /**
+     * Gives us the value of the dice.
+     * @return int value of the dice
+     */
     public int getDice() {
         return dice;
     }
 
 
-    //initiate the game 
+    /**
+     * Method to start the game and prints the board with the location of the snakes and ladder.
+     */
     public void play() {
         
         //printing the board
@@ -108,7 +128,11 @@ public class LadderAndSnake {
         
     }
 
-    //moving players
+    /**
+     * This method flips the dice and moves the player depending on the new location he gets.
+     * @param player the player whose turn it is.
+     * @return true if the player is at location 100(won the game) or false when not at 100.
+     */
     public boolean movePlayer(Player player){
         
         //calculate new position
@@ -170,6 +194,10 @@ public class LadderAndSnake {
         }
     }
     
+    /**
+     * This method prints the board with the players current locations
+     * @param list the list of the players location
+     */
     public void printBoard(ArrayList<Player> list){
 
         System.out.println();
